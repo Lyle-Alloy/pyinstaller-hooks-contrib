@@ -1070,3 +1070,33 @@ def test_altair(pyi_builder):
     pyi_builder.test_source("""
         import altair
         """)
+
+
+@importorskip('fabric')
+def test_fabric(pyi_builder):
+    pyi_builder.test_source("""
+        import fabric
+        """)
+
+
+@importorskip('cassandra')
+def test_cassandra(pyi_builder):
+    pyi_builder.test_source("""
+        import cassandra
+        """)
+
+
+@importorskip('gitlab')
+def test_gitlab(pyi_builder):
+    pyi_builder.test_source("""
+        import gitlab
+        """)
+
+
+@importorskip('shapely')
+def test_shapely(pyi_builder):
+    pyi_builder.test_source("""
+        from shapely.geometry import Point
+        patch = Point(0.0, 0.0).buffer(10.0)
+        print(patch.area)
+        """)
